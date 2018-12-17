@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="site-heading">
-                        <h1>About Me</h1><span class="subheading">This is what I do</span></div>
+                        <h1>About</h1><span class="subheading">N/A</span></div>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto">
-                <p>Hello World.</p>
+                <p>Description goes here</p>
             </div>
         </div>
     </div>

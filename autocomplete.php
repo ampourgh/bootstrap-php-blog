@@ -10,16 +10,12 @@
   <?php include('./include/head.php'); ?>
   <script>
   $( function() {
-    var availableTags = [];
-
-    <?php
-    $json = json_decode(file_get_contents('./assets/data/city.json'), true);
-    $jsonArr = $json['arr'];
-    for ($i = 0; $i < count($jsonArr); $i++) {
-      echo 'availableTags.push("' . $jsonArr[$i]["city"] . '");';
-    }
-    ?>
-
+    var availableTags = [
+        "Austin",
+        "Dallas",
+        "Houston",
+        "San Antonio"
+    ];
     function split( val ) {
       return val.split( /,\s*/ );
     }
@@ -70,7 +66,7 @@
           <div class="row">
               <div class="col-md-10 col-lg-8 mx-auto">
                   <div class="site-heading">
-                      <h1>Contact</h1><span class="subheading">Have any inquiries? We'll respond to you ASAP.</span></div>
+                      <h1>Contact Me</h1><span class="subheading">Have questions? I have answers.</span></div>
               </div>
           </div>
       </div>
@@ -78,6 +74,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-10 col-lg-8 mx-auto">
+              <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
               <form id="contactForm" name="sentMessage" novalidate="novalidate">
                   <div class="control-group">
                       <div class="form-group floating-label-form-group controls"><label>Name</label><input class="form-control" type="text" required="" placeholder="Name" id="name"><small class="form-text text-danger help-block"></small></div>
