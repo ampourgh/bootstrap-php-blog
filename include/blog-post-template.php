@@ -1,15 +1,19 @@
 <div class="row" style="padding: 0 10%;">
 
 <?php
-include('arr.php');
+
+// since the file is an include, the JSON file is being accessed from outside /include
+$json = json_decode(file_get_contents('./assets/data/index.json'), true);
+$jsonArr = $json['arr'];
+
 for ($i = 0; $i < 3; $i++) {
   echo '
   <div data-aos-delay="0" class="col-sm bounce animated">
     <div class="card" style="width: 22rem;">
       <img class="card-img-top" src="assets/img/card.svg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">' . $arrBlog[$i][0] . '.) ' . $arrBlog[$i][1] . '</h5>
-        <p class="card-text">' . $arrBlog[$i][2] . '</p>
+        <h5 class="card-title">' . $jsonArr[$i]['id'] . '.) ' . $jsonArr[$i]['title'] . '</h5>
+        <p class="card-text">' . $jsonArr[$i]['desc'] . '</p>
         <div class="text-center"><a href="#" class="btn btn-primary">Learn More</a></div>
       </div>
     </div>
@@ -27,14 +31,14 @@ for ($i = 0; $i < 3; $i++) {
 
             <?php
 
-            for ($i = 3; $i < count($arrBlog); $i++) {
+            for ($i = 3; $i < count($jsonArr); $i++) {
               echo '
                 <div class="post-preview">
                     <a href="#">
-                        <h2 data-aos="fade" data-aos-duration="1000" data-aos-once="true" class="post-title">' . $arrBlog[$i][0] . '.) ' . $arrBlog[$i][1] . '</h2>
-                        <h3 data-aos="fade" data-aos-duration="1000" data-aos-delay="250" data-aos-once="true" class="post-subtitle">' . $arrBlog[$i][2] . '</h3>
+                        <h2 data-aos="fade" data-aos-duration="1000" data-aos-once="true" class="post-title">' . $jsonArr[$i]['id'] . '.) ' . $jsonArr[$i]['title'] . '</h2>
+                        <h3 data-aos="fade" data-aos-duration="1000" data-aos-delay="250" data-aos-once="true" class="post-subtitle">' . $jsonArr[$i]['desc'] . '</h3>
                     </a>
-                    <p data-aos="fade" data-aos-duration="1000" data-aos-delay="350" data-aos-once="true" class="post-meta">Posted by&nbsp;<a href="#">' . $arrBlog[$i][3] . '</a></p>
+                    <p data-aos="fade" data-aos-duration="1000" data-aos-delay="350" data-aos-once="true" class="post-meta">Posted by&nbsp;<a href="#">' . $jsonArr[$i]['time'] . '</a></p>
                 </div>
                 <hr>';
             };

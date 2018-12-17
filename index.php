@@ -16,17 +16,25 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="site-heading">
-                        <h1 class="text-truncate" data-bs-hover-animate="bounce" style="font-family: Cinzel, serif;">THE NEWSROOM</h1><span class="subheading">Get all the latest news from Emerson Pour</span></div>
+                        <h1 class="text-truncate" data-bs-hover-animate="bounce" style="font-family: Cinzel, serif;">THE NEWSROOM</h1><span class="subheading">Get all the latest news from Emerson Pour</span>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <?php include('./include/blog-post-template.php'); ?>
 
-    <?php include('./include/footer.php'); ?>
+
+    <section>
+      <?php include('./include/blog-post-template.php'); ?>
+    </section>
+
+    <footer class="bg-dark">
+      <?php include('./include/footer.php'); ?>
+    </footer>
 
     <?php include('./include/js-imports.php');?>
+
 </body>
 
 </html>

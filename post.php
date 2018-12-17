@@ -32,7 +32,9 @@
         </div>
     </article>
 
-    <?php include('./include/footer.php'); ?>
+    <footer class="bg-dark">
+      <?php include('./include/footer.php'); ?>
+    </footer>
 
     <?php include('./include/js-imports.php');?>
 </body>
