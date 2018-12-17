@@ -59,6 +59,8 @@ for ($i = $headlineStart; $i < $headlineCount; $i++) {
     <div class="row" style="margin: 17px;">
         <div class="col-md-10 col-lg-8 col-xl-11 offset-xl-0 bounce animated">
 
+          <nav aria-label="Page navigation example">
+
             <?php
 
             for ($jsonStart = 3; $i < $jsonEnd; $i++) {
@@ -76,19 +78,29 @@ for ($i = $headlineStart; $i < $headlineCount; $i++) {
             ?>
 
 
-            <?php
-            if (isset($_GET['pagination']) && $_GET['pagination'] != 1) {
-              if($_GET['pagination']) {
-                echo '<a href="./index.php?pagination=' . ($_GET['pagination'] - 1) . '"><div class="clearfix"><button class="btn btn-primary float-right" type="button" style="background-color: rgb(0,0,0);">Recent Posts&nbsp;⇒</button></div></a>';
-                if ($jsonEnd != $jsonCount) {
-                  echo '<a href="./index.php?pagination=' . ($_GET['pagination'] + 1) . '"><div class="clearfix"><button class="btn btn-primary float-right" type="button" style="background-color: rgb(0,0,0);">Older Posts&nbsp;⇒</button></div></a>';
-                }
-              }
-            } else {
-              echo '<a href="./index.php?pagination=2"><div class="clearfix"><button class="btn btn-primary float-right" type="button" style="background-color: rgb(0,0,0);">Older Posts&nbsp;⇒</button></div></a>';
-            }
+            <ul class="pagination justify-content-end">
+              <li class="page-item <?php if (!isset($_GET['pagination']) || $_GET['pagination'] == 1) {echo "disabled";} ?>">
+                <a class="page-link" href="./index.php?pagination=<?php echo ($_GET['pagination'] - 1); ?>" tabindex="-1">Previous</a>
+              </li>
+              <?php
+                $pageNum = 1;
+                for ($d = 0; $d < $jsonCount; $d += 5) {
+                    echo '<li class="page-item';
 
-            ?>
+                    if ($_GET['pagination'] == $pageNum) {
+                      echo ' disabled';
+                    }
+
+                    echo '"><a class="page-link" href="./index.php?pagination=' . $pageNum . '">' . $pageNum . '</a></li>';
+                    $pageNum++;
+                }
+               ?>
+              <li class="page-item <?php if ($jsonEnd == $jsonCount) {echo "disabled";} ?>">
+                <a class="page-link" href="./index.php?pagination=<?php echo ($_GET['pagination'] + 1); ?>">Next</a>
+              </li>
+            </ul>
+          </nav>
+          
         </div>
     </div>
 </div>
