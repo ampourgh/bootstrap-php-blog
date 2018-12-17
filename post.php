@@ -16,8 +16,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="post-heading">
-                      <h1 data-aos="fade" data-aos-duration="1000" data-aos-once="true">H1 Title with 1000ms duration bounce</h1>
-                        <h2 data-aos="fade" data-aos-duration="1000" data-aos-delay="250" data-aos-once="true" class="subheading">H2 much like the H2 but with a 250ms delay</h2><span data-aos="fade" data-aos-duration="1000" data-aos-delay="350" data-aos-once="true" class="meta">Emerson Pourghaed, December 14, 2018 -- p tag with 350ms delay</span></div>
+                      <h1 data-aos="fade" data-aos-duration="1000" data-aos-once="true"><?php echo $_GET['title']; ?></h1>
+                        <h2 data-aos="fade" data-aos-duration="1000" data-aos-delay="250" data-aos-once="true" class="subheading"><?php echo $_GET['desc']; ?></h2><span data-aos="fade" data-aos-duration="1000" data-aos-delay="350" data-aos-once="true" class="meta"><?php echo $_GET['time']; ?></span></div>
                 </div>
             </div>
         </div>
@@ -26,7 +26,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>Article content will be inserted here.</p>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-warning">
+                      <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page"><?php echo $_GET['title']; ?></li>
+                    </ol>
+                  </nav>
+                    <p><?php echo $_GET['desc']; ?></p>
                 </div>
             </div>
         </div>

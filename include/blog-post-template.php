@@ -44,7 +44,7 @@ for ($i = $headlineStart; $i < $headlineCount; $i++) {
       <div class="card-body">
         <h5 class="card-title">' . $jsonArr[$i]['id'] . '.) ' . $jsonArr[$i]['title'] . '</h5>
         <p class="card-text">' . $jsonArr[$i]['desc'] . '</p>
-        <div class="text-center"><a href="#" class="btn btn-primary">Learn More</a></div>
+        <div class="text-center"><a href="./post.php?title='.$jsonArr[$i]['title'].'&desc='.$jsonArr[$i]['desc'].'&time='.$jsonArr[$i]['time'].'" class="btn btn-primary bg-warning" style="border: #ccc solid 1px;">Learn More</a></div>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ for ($i = $headlineStart; $i < $headlineCount; $i++) {
             for ($jsonStart = 3; $i < $jsonEnd; $i++) {
               echo '
                 <div class="post-preview">
-                    <a href="#">
+                    <a href="./post.php?title='.$jsonArr[$i]['title'].'&desc='.$jsonArr[$i]['desc'].'&time='.$jsonArr[$i]['time'].'">
                         <h2 data-aos="fade" data-aos-duration="1000" data-aos-once="true" class="post-title">' . $jsonArr[$i]['id'] . '.) ' . $jsonArr[$i]['title'] . '</h2>
                         <h3 data-aos="fade" data-aos-duration="1000" data-aos-delay="250" data-aos-once="true" class="post-subtitle">' . $jsonArr[$i]['desc'] . '</h3>
                     </a>
@@ -87,7 +87,9 @@ for ($i = $headlineStart; $i < $headlineCount; $i++) {
                 for ($d = 0; $d < $jsonCount; $d += 5) {
                     echo '<li class="page-item';
 
-                    if ($_GET['pagination'] == $pageNum) {
+                    if ($pageNum == 1 && isset($_GET['pagination']) == false) {
+                      echo ' disabled';
+                    } elseif ($_GET['pagination'] == $pageNum) {
                       echo ' disabled';
                     }
 
@@ -100,7 +102,7 @@ for ($i = $headlineStart; $i < $headlineCount; $i++) {
               </li>
             </ul>
           </nav>
-          
+
         </div>
     </div>
 </div>

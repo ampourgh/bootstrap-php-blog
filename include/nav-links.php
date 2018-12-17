@@ -1,7 +1,7 @@
 <?php
   $folder = '/Bootstrap-Studio-Design/';
-  $arr = ['index.php', 'about.php', 'contact.php', 'post.php'];
-  $arr2 = ['home', 'table', 'image', 'calendar-times'];
+  $arr = ['index.php', 'about.php', 'contact.php'];
+  $arr2 = ['home', 'table', 'image'];
   $withOutParams = explode('?', $_SERVER['REQUEST_URI'], 2);
 
   for ($i = 0; $i < count($arr); $i++) {
