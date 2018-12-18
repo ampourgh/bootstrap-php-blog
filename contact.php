@@ -62,8 +62,9 @@
   </script>
 </head>
 <body>
-  <?php include('./include/navbar.php');?>
 
+  <?php include('./include/navbar.php');?>
+  
   <header class="masthead" style="background-image:url('assets/img/contact-bg.jpg');">
       <div class="overlay"></div>
       <div class="container">

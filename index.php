@@ -4,11 +4,14 @@
 <head>
     <title>Emerson - Home</title>
     <?php include('./include/head.php'); ?>
+    
 </head>
 
 <body>
 
     <?php include('./include/navbar.php');?>
+
+    <?php include('./include/modal-form.php');?>
 
     <header class="masthead" style="background-image:url('assets/img/home-bg.jpg');">
         <div class="overlay"></div>
@@ -22,8 +25,6 @@
             </div>
         </div>
     </header>
-
-
 
     <section>
       <?php include('./include/blog-post-template.php'); ?>

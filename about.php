@@ -10,6 +10,8 @@
 
     <?php include('./include/navbar.php');?>
 
+    <?php include('./include/modal-form.php');?>
+
     <header class="masthead" style="background-image:url('assets/img/about-bg.jpg');">
         <div class="overlay"></div>
         <div class="container">
