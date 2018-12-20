@@ -21,9 +21,14 @@
 ?>
 
 <style media="screen">
+  .blue-highlight {
+    cursor: pointer;
+  }
   .blue-highlight:focus, .blue-highlight:active {
     outline: none !important;
     box-shadow: none !important;
   }
 </style>
-<button type="button" class="bg-transparent border-0 text-light blue-highlight" data-toggle="modal" data-target="#bootstrapModal"><i class="fa fa-table"></i></button>
+<button type="button" class="bg-transparent border-0 text-light blue-highlight" data-toggle="modal" data-target="#bootstrapModal"><i class="fa fa-wpforms"></i></button>
+<button type="button" class="bg-transparent border-0 text-light blue-highlight" data-toggle="modal" data-target="#bannerModal"><i class="fa fa-comments"></i></button>
+<button type="button" class="bg-transparent border-0 text-light blue-highlight" data-toggle="modal" data-target="#bannerModal-2"><i class="fa fa-bell"></i></button>
